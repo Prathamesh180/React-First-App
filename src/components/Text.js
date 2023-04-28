@@ -7,25 +7,29 @@ export default function Textbox(props){
   }
   const handleUpperClick = () =>{
     let newText = text.toUpperCase();
-    setText(newText);
+    setText(newText); 
+    props.showAlert('Converted to uppercase','success');
   }
   const handleLowerClick = () =>{
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert('Converted to lowercase','success');
   }
   const handleclearClick = () =>{
     let newText = "";
     setText(newText);
+    props.showAlert('Text cleared','success');
   }
   const handlecopytext = () => {
     var text = document.querySelector("#myBox");
-    text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert('Copied to clipboard','success');
   }
   const handleextraspaces = () =>{
     // let text = document.querySelector("#myBox");
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert('Extra spaces removed','success');
 }
   const[text, setText] = useState("Enter your text here");
     return(
