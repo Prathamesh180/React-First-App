@@ -43,8 +43,8 @@ function App() {
     <Alert alert={alert}/>
     <div className="container my-3">
       <Routes>
-          <Route exact path="/about" element={<About/>}/>
-          <Route exact path="/" element={<Textbox heading="Enter your text to edit" showAlert={showAlert} mode={mode}/>}/>
+          <Route exact path="/about" element={<About mode={mode}/>}/>
+          <Route exact path="/" element={<Textbox heading="Try Textutils - Word counter, Character counter, Remove extra spaces" showAlert={showAlert} mode={mode}/>}/>
       </Routes>
     </div>
     </Router>

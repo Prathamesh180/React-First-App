@@ -6,8 +6,10 @@ function Alert(props) {
         return lower.charAt(0).toUpperCase()+lower.slice(1);
     }
     return(
-    props.alert && <div className={`alert alert-${props.alert.type} py-1`} role="alert">
+        <div style={{height : "30px"}}>
+    {props.alert && <div className={`alert alert-${props.alert.type} py-1`} role="alert">
         <strong>{capitalize(props.alert.type)}</strong> : {props.alert.msg}
+    </div>}
     </div>
 )}
 
